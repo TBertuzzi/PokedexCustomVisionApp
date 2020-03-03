@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:Xamarin.Forms.MVVMBase.Page;assembly=Xamarin.Forms.MVVMBase"
+             Padding="0,60,0,0"
+             xmlns:c="clr-namespace:PokedexCustomVisionApp.Converters" x:Class="PokedexCustomVisionApp.PokemonView">
+  <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:ImageFromByteArrayConverter x:Key="imageFileCvt" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*" />
+                            
+                            </Grid.ColumnDefinitions>
+                        
+                            <Image HeightRequest="120" 
+                                   WidthRequest = "120"
+                                   Source="{Binding Pokemon.Image, Converter={StaticResource imageFileCvt}}"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.RowSpan ="3"/>
+
+                           
+                             <Label Grid.Row="0" 
+                                   Grid.Column="1"
+                                     FontSize="Medium"
+                                   Text="{Binding Pokemon.Id,StringFormat='#{0}'}"/>
+
+                            <Label Grid.Row="1" 
+                                   Grid.Column="1"
+                                   Text="{Binding Pokemon.Name}"
+                                   FontSize="Large"
+                                   TextColor="#FF5525"/>
+
+                            <Label Grid.Row="2" 
+                                   Grid.Column="1"
+                                   Text="{Binding Pokemon.Height,StringFormat='Peso: {0}'}"
+                                   FontSize="Large"
+                                   TextColor="#FF5525"/>
+
+                             <Button Text="Voltar" Grid.Column="0" Grid.Row="3" Command="{Binding VoltarCommand}"  />
+                     
+                        
+                        </Grid>
+</base:BasePage>

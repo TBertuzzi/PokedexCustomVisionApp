@@ -1,4 +1,5 @@
 ﻿using System;
+using PokedexCustomVisionApp.Services;
 using PokedexCustomVisionApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.MVVMBase.Services.Navigation;
@@ -19,6 +20,11 @@ namespace PokedexCustomVisionApp
         public void BuildDependencies()
         {
             ViewModelLocator.Current.RegisterForNavigation<MainPage, MainViewModel>();
+            ViewModelLocator.Current.RegisterForNavigation<PokemonView, PokemonViewModel>();
+
+            //registrando os serviços
+            ViewModelLocator.Current.Register<IPokemonService, PokemonService>();
+            ViewModelLocator.Current.Register<ICustomVision, CustomVisionService>();
         }
 
         async void InitNavigation()

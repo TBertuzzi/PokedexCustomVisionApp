@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<base:BasePage   xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              Padding="0,60,0,0"
+            xmlns:base="clr-namespace:Xamarin.Forms.MVVMBase.Page;assembly=Xamarin.Forms.MVVMBase"
              mc:Ignorable="d" x:Class="PokedexCustomVisionApp.MainPage">
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Tirar Foto"  />
-        <Button Text="Tirar uma Foto" Clicked="Button_Clicked" ></Button>
-        <Image x:Name="image"></Image>
+        <Label Text="Bem Vindo a Pokedex"  />
+        <Button Text="Identificar Pokemon" Command="{Binding VerificarPokemonCommand}" ></Button>
     </StackLayout>
-</ContentPage>
+</base:BasePage>

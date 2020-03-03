@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.CurrentActivity;
+using Acr.UserDialogs;
 
 namespace PokedexCustomVisionApp.Droid
 {
@@ -26,7 +27,7 @@ namespace PokedexCustomVisionApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-           
+            UserDialogs.Init(this);
 
             LoadApplication(new App());
         }
