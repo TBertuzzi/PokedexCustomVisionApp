@@ -23,6 +23,7 @@ namespace PokedexCustomVisionApp.Services
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     response.Value.Image = GetImageStreamFromUrl(response.Value.Sprites.FrontDefault.AbsoluteUri);
+                    response.Value.Description = PokedexHelper.RetornaDescricao(response.Value.Name.ToLower());
                     return response.Value;
                 }
                 else

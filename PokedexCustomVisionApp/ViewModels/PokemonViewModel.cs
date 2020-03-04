@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PokedexCustomVisionApp.Helpers;
 using PokedexCustomVisionApp.Models;
+using PokedexCustomVisionApp.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.MVVMBase.Services.Navigation;
@@ -45,16 +47,16 @@ namespace PokedexCustomVisionApp.ViewModels
                 {
                     Pokemon = navigationData["pokemon"].Cast<Pokemon>();
 
-                    await TextToSpeech.SpeakAsync(PokedexHelper.RetornaDescricao(Pokemon.Name.ToLower()));
+                    await TextToSpeech.SpeakAsync(Pokemon.Description);
                 }
                 else
                 {
                     return;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                Debug.WriteLine(ex.Message);
             }
 
         }

@@ -3,12 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             Padding="0,60,0,0"
             xmlns:base="clr-namespace:Xamarin.Forms.MVVMBase.Page;assembly=Xamarin.Forms.MVVMBase"
              mc:Ignorable="d" x:Class="PokedexCustomVisionApp.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Bem Vindo a Pokedex"  />
-        <Button Text="Identificar Pokemon" Command="{Binding VerificarPokemonCommand}" ></Button>
-    </StackLayout>
+
+   <Grid VerticalOptions="FillAndExpand" RowSpacing="0" BackgroundColor="White">
+           <Grid.RowDefinitions>
+               <RowDefinition Height="*"/>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="Auto"/> 
+           </Grid.RowDefinitions> 
+           <Image Grid.Row="0" Source="backGround.jpg" Aspect="AspectFill" />
+
+
+           <Frame Grid.Row="1" Style="{StaticResource FrameBtnStyle}"/>
+            
+           <StackLayout Grid.Row="2" TranslationY="-30"  VerticalOptions="StartAndExpand">
+                <Label  Margin="30,0" HorizontalTextAlignment="Start">
+                       <Label.FormattedText>
+                            <FormattedString>
+                               <Span Text="Bem Vindo a " FontSize="28" FontAttributes="Bold" />
+                                <Span Text="Pokédex" FontSize="25"/> 
+                            </FormattedString>
+                        </Label.FormattedText>
+                </Label>
+
+                <Label  Margin="30,0" Text="A Pokédex é uma enciclopédia virtual portátil de alta tecnologia que os treinadores Pokémon transportam para registra todas as espécies diferentes de Pokémon que são encontradas." TextColor="Silver" FontSize="Medium" HorizontalTextAlignment="Start"/>
+
+           </StackLayout>
+
+        <Frame Grid.Row="3" Padding="0,20,25,20" Margin="5,0,5,15" BackgroundColor="#E50B18" Style="{StaticResource FrameBtnStyle}"  HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                            <Label Text="Identificar Pokémon" FontSize="{OnPlatform iOS='Header', Android='28'}" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/> 
+                     <Frame.GestureRecognizers>
+                             <TapGestureRecognizer
+                                  NumberOfTapsRequired="1" 
+                                 Command="{Binding VerificarPokemonCommand}"/>
+                     </Frame.GestureRecognizers>
+          </Frame>
+   
+     </Grid>
+    
 </base:BasePage>

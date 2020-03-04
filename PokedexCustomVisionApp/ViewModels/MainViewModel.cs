@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Acr.UserDialogs;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using PokedexCustomVisionApp.Models;
 using PokedexCustomVisionApp.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.MVVMBase.Services.Navigation;
@@ -19,7 +20,7 @@ namespace PokedexCustomVisionApp.ViewModels
         private ICustomVision _CustomVision;
         private IPokemonService _PokemonService;
 
-        public MainViewModel(ICustomVision customVision,IPokemonService pokemonService) : base("Pokedex")
+        public MainViewModel(ICustomVision customVision,IPokemonService pokemonService) : base("Pokédex")
         {
             VerificarPokemonCommand = new Command(ExecuteVerificarPokemonCommand);
 
@@ -45,12 +46,7 @@ namespace PokedexCustomVisionApp.ViewModels
                 PhotoSize = PhotoSize.Small
             });
 
-            /*
-                CompressionQuality = 75,
-                CustomPhotoSize = 50,
-                PhotoSize = PhotoSize.MaxWidthHeight,
-                MaxWidthHeight = 2000
-             */
+
 
             if (file == null)
             {
@@ -59,6 +55,7 @@ namespace PokedexCustomVisionApp.ViewModels
             }
 
             string result = string.Empty;
+            Pokemon pokemon = null;
             using (var Dialog = UserDialogs.Instance.Loading("Processando..", null, null, true, MaskType.Black))
             {
 
@@ -72,12 +69,12 @@ namespace PokedexCustomVisionApp.ViewModels
                     return;
                 }
 
+                pokemon = await _PokemonService.GetPokemon(result);
+
             }
 
             //Gambiarra para Navegação do UserDialogs
-            await Task.Delay(10);
-
-            var pokemon = await _PokemonService.GetPokemon(result);
+          //  await Task.Delay(10);
 
             if (pokemon != null)
             {

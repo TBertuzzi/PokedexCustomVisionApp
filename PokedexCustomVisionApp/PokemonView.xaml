@@ -11,47 +11,52 @@
     </ContentPage.Resources>
 
 
+ 
+            <ScrollView>   
+                <Grid Padding="30,5,30,0">
+                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" /> 
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Row="0" HorizontalTextAlignment="Start">
+                           <Label.FormattedText>
+                                <FormattedString>
+                                   <Span Text="Pokémon " FontSize="36" FontAttributes="Bold" />
+                                    <Span Text="{Binding Pokemon.Name}" FontSize="35"/> 
+                                </FormattedString>
+                            </Label.FormattedText>
+                    </Label>
 
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*" />
-                            
-                            </Grid.ColumnDefinitions>
-                        
-                            <Image HeightRequest="120" 
-                                   WidthRequest = "120"
+
+                     <Image  HeightRequest="365"
+                          
                                    Source="{Binding Pokemon.Image, Converter={StaticResource imageFileCvt}}"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Grid.RowSpan ="3"/>
+                                   />
+                   
 
-                           
-                             <Label Grid.Row="0" 
-                                   Grid.Column="1"
-                                     FontSize="Medium"
-                                   Text="{Binding Pokemon.Id,StringFormat='#{0}'}"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding Pokemon.Id,StringFormat='ID #{0}'}" FontSize="30" FontAttributes="Bold" />
 
-                            <Label Grid.Row="1" 
-                                   Grid.Column="1"
-                                   Text="{Binding Pokemon.Name}"
-                                   FontSize="Large"
-                                   TextColor="#FF5525"/>
+                        <StackLayout Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="{Binding Pokemon.Height,StringFormat='Peso {0} Kg'}"/>
+                        </StackLayout>
 
-                            <Label Grid.Row="2" 
-                                   Grid.Column="1"
-                                   Text="{Binding Pokemon.Height,StringFormat='Peso: {0}'}"
-                                   FontSize="Large"
-                                   TextColor="#FF5525"/>
+                    </Grid>
 
-                             <Button Text="Voltar" Grid.Column="0" Grid.Row="3" Command="{Binding VoltarCommand}"  />
-                     
-                        
-                        </Grid>
+                    <StackLayout Grid.Row="3">
+                        <Label LineHeight="1.4" Text="{Binding Pokemon.Description}"/>
+                    </StackLayout>
+
+                </Grid>
+             </ScrollView>
+
+
 </base:BasePage>

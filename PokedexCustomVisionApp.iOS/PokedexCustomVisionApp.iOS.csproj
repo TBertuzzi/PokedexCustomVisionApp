@@ -138,4 +138,7 @@
       <Name>PokedexCustomVisionApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backGround.jpg" />
+  </ItemGroup>
 </Project>
