@@ -27,7 +27,7 @@ namespace PokedexCustomVisionApp.ViewModels
         }
 
 
-        public PokemonViewModel() : base("Pokemon")
+        public PokemonViewModel() : base("Pokémon")
         {
             VoltarCommand = new Command(ExecuteVoltarCommand);
             Pokemon = new Pokemon();

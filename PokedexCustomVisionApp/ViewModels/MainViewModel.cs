@@ -73,8 +73,6 @@ namespace PokedexCustomVisionApp.ViewModels
 
             }
 
-            //Gambiarra para Navegação do UserDialogs
-          //  await Task.Delay(10);
 
             if (pokemon != null)
             {
