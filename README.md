@@ -6,7 +6,7 @@ Uma Pokédex desenvolvima com Custom Vision e Xamarin.Forms. O App reconhece e o
 
 Video :
 
-[![CanalNetThumb](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![CanalNetThumb](https://img.youtube.com/vi/Co4A1e9WeL4/0.jpg)](https://www.youtube.com/watch?v=Co4A1e9WeL4)
 
 Segue abaixo os links de materiais complementares ao video.
 
