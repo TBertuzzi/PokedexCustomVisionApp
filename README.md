@@ -15,6 +15,10 @@ Segue abaixo os links de materiais complementares ao video.
 |Framework MVVM utilizado, Xamarin.Forms.MVVMBase|[Nuget](https://www.nuget.org/packages/Xamarin.Forms.MVVMBase/)|[Github](https://github.com/TBertuzzi/Xamarin.Forms.MVVMBase/)|
 |Xamarin.Helpers|[Nuget](https://www.nuget.org/packages/Xamarin.Helpers/)|[Github](https://github.com/TBertuzzi/Xamarin.Helpers/)|
 |Convertendo texto em voz|[Medium](https://medium.com/@bertuzzi/o-x-do-xamarin-forms-convertendo-texto-em-voz-6c792ef86523)|[Github](https://github.com/TBertuzzi/ExemploTexttoSpeech)|
+|Acr User Dialogs|[Medium](https://medium.com/@bertuzzi/meu-plugin-minha-vida-toast-load-dialogs-baf96b51ade7)|[Github](https://github.com/TBertuzzi/DialogsExemplo)|
 |Pokeapi|[Site Oficial](https://pokeapi.co)||
+
+
+
 
 Exemplos para utilizar no CustomVision : https://github.com/TBertuzzi/PokedexCustomVisionApp/tree/master/Resources/CustomVision
