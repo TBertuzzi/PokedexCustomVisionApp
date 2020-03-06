@@ -8,7 +8,7 @@ Video :
 
 Segue abaixo os links de materiais complementares ao video.
 
-|Utilizado no Video |Como Utilizar| Código Fonte|
+|Utilizado no Video |Sobre| Código Fonte|
 | ------------------- | :------------------: |:------------------: |
 |Custom Vision|[Documentação](https://azure.microsoft.com/pt-br/services/cognitive-services/custom-vision-service/)||
 |Apresentação sobre custom Vision|[Andre Secco](https://andresecco.com.br/2019/04/mvp-conf-latam-2019/)||
