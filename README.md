@@ -2,7 +2,7 @@
 
 ## 📱 🔍Uma Pokédex feita com CustomVision e Xamarin.Forms
 
-Uma Pokédex desenvolvima com Custom Vision e Xamarin.Forms. O App reconhece e obtem os dados dos pokemons para exibi-los.
+Uma Pokédex desenvolvida com Custom Vision e Xamarin.Forms. O App reconhece e obtem os dados dos pokemons para exibi-los.
 
 Video :
 
